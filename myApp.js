@@ -10,6 +10,7 @@ const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
+app.disable('x-powered-by');
 app.use(helmet());  // HY 20240714  exercise # 2
 app.use(helmet.hidePoweredBy());
 /* Multiple lines of comment
