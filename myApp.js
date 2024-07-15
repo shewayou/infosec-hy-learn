@@ -46,6 +46,10 @@ app.use( helmet.ieNoOpen());  // 6: Prevent IE from Opening Untrusted HTML
 const ninetyDaysInSeconds= 90*24*60*60;
 app.use( helmet.hsts(  { maxAge: ninetyDaysInSeconds, force: true }  ));  // 7: HTTP Strict Transport Security (HSTS)
 
+// 8: Disable DNS Prefetching
+app.use(helmet.dnsPrefetchControl({ allow: false }))
+
+
 
 
 
