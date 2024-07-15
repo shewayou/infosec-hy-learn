@@ -9,6 +9,13 @@ module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');
+
+app.use(helmet())  // HY 20240714  exercise # 2
+app.use(helmet.hidePoweredBy())
+/* Multiple lines of comment
+*/
+
+
 app.use('/_api', api);
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
