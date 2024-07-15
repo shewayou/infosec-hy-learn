@@ -16,13 +16,13 @@ app.use(helmet.hidePoweredBy());
 /* Multiple lines of comment
 */
 
-
+/* *** Use only helmet contentSecurityPolicy and NO xFrameOptions at all.
 // app.use(helmet.frameguard( { action: "deny" }));
 app.use(helmet(
   { xFrameOptions: { action: "deny" }  }  
 ));
 // The above learned from:::  https://helmetjs.github.io/#x-frame-options   
-
+*** */
 
 app.use(
   helmet({
