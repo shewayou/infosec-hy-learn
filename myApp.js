@@ -1,5 +1,5 @@
 const express = require('express');
-const hemlet= require('helmet')
+const helmet= require('helmet')
 const PORT = process.env.PORT || 3030;
 
 const app = express();
@@ -10,8 +10,8 @@ const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
-app.use(helmet())  // HY 20240714  exercise # 2
-app.use(helmet.hidePoweredBy())
+app.use(helmet());  // HY 20240714  exercise # 2
+app.use(helmet.hidePoweredBy());
 /* Multiple lines of comment
 */
 
