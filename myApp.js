@@ -49,6 +49,8 @@ app.use( helmet.hsts(  { maxAge: ninetyDaysInSeconds, force: true }  ));  // 7: 
 // 8: Disable DNS Prefetching
 app.use(helmet.dnsPrefetchControl({ allow: false }))
 
+// 9: Disable Client-Side Caching
+app.use(helmet.noCache( ))
 
 
 
