@@ -22,7 +22,7 @@ app.use(helmet(
 ));
 // The above learned from:::  https://helmetjs.github.io/#x-frame-options   
 *** */
-app.use(helmet.frameguard( { action: "deny" }));
+app.use(helmet.frameguard( { action: "deny" })); // 3: X-Frame-Options or Content-Security-Policy
 
 /* ***
 app.use(
@@ -33,6 +33,11 @@ app.use(
   })
 );
 *** */
+
+
+app.use(  helmet.xssFilter(  ));  // 4: Cross-site scripting (XSS) 
+
+
 
 
 app.use('/_api', api);
