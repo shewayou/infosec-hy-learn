@@ -52,6 +52,14 @@ app.use(helmet.dnsPrefetchControl({ allow: false }))
 // 9: Disable Client-Side Caching
 app.use(helmet.noCache( ))
 
+// 10: Content-Security-Policy
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: { "scriptSrc": [ "'self', 'trusted-cdn.com'" ], "defaultSrc": [ "'self'"], },
+    },
+  })
+);
 
 
 
