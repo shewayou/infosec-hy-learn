@@ -25,12 +25,10 @@ app.use(helmet(
 *** */
 /* ***
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: { "frame-ancestors": [ "'none'" ], },
-    },
-  })
-);
+  helmet.contentSecurityPolicy( {
+      directives: { "frame-ancestors": [ "'none'" ] }
+  }
+));
 *** */
 app.use(helmet.frameguard( { action: "deny" })); // 3: frameguard: X-Frame-Options or Content-Security-Policy
 
@@ -54,12 +52,10 @@ app.use(helmet.noCache( ))
 
 // 10: Content-Security-Policy
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: { "defaultSrc": ["'self'"], "scriptSrc": ["'self'", 'trusted-cdn.com'], },
-    },
-  })
-);
+  helmet.contentSecurityPolicy( {
+      directives: { "defaultSrc": ["'self'"], "scriptSrc": ["'self'", 'trusted-cdn.com'] }
+    } 
+));
 
 
 
