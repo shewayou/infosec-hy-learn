@@ -17,6 +17,8 @@ app.use(helmet.hidePoweredBy());
 */
 
 
+app.use(helmet.frameguard( { action: 'deny' }));
+
 app.use('/_api', api);
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
@@ -24,5 +26,5 @@ app.get("/", function (request, response) {
 
 
 app.listen( PORT, () => {
-  console.log( `:brocoli:Useful Programmer Info Security App Started on port ${PORT}`);
+  console.log( `Hsiwei Yu: Info Security App Started on port ${PORT}`);
 } );
