@@ -42,6 +42,11 @@ app.use(  helmet.noSniff(  ));  // 5: instructing the browser to not bypass the 
 
 app.use( helmet.ieNoOpen());  // 6: Prevent IE from Opening Untrusted HTML
 
+// 7: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
+const ninetyDaysInSeconds= 90*24*60*60;
+app.use( helmet.hsts(  { maxAge: ninetyDaysInSeconds, force: true }  ));  // 7: HTTP Strict Transport Security (HSTS)
+
+
 
 
 
