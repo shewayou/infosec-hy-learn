@@ -22,7 +22,7 @@ app.use(helmet.frameguard( { action: 'deny' }));
 app.use(
   helmet({
     contentSecurityPolicy: {
-      directives: { "frame-ancestors": [ "none" ], },
+      directives: { "frame-ancestors": [ "'none'" ], },
     },
   })
 );
