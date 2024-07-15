@@ -40,6 +40,8 @@ app.use(  helmet.xssFilter(  ));  // 4: Cross-site scripting (XSS)
 
 app.use(  helmet.noSniff(  ));  // 5: instructing the browser to not bypass the provided Content-Type. 
 
+app.use( helmet.ieNoOpen());  // 6: Prevent IE from Opening Untrusted HTML
+
 
 
 
