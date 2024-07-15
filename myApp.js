@@ -16,14 +16,13 @@ app.use(helmet.hidePoweredBy());
 /* Multiple lines of comment
 */
 
+// The next 2 comment blocks pertain to 3: frameguard: X-Frame-Options or Content-Security-Policy
 /* *** Use only helmet contentSecurityPolicy and NO xFrameOptions at all.
 app.use(helmet(
   { xFrameOptions: { action: "deny" }  }  
 ));
 // The above learned from:::  https://helmetjs.github.io/#x-frame-options   
 *** */
-app.use(helmet.frameguard( { action: "deny" })); // 3: X-Frame-Options or Content-Security-Policy
-
 /* ***
 app.use(
   helmet({
@@ -33,9 +32,13 @@ app.use(
   })
 );
 *** */
+app.use(helmet.frameguard( { action: "deny" })); // 3: frameguard: X-Frame-Options or Content-Security-Policy
+
 
 
 app.use(  helmet.xssFilter(  ));  // 4: Cross-site scripting (XSS) 
+
+app.use(  helmet.noSniff(  ));  // 5: instructing the browser to not bypass the provided Content-Type. 
 
 
 
